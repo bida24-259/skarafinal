@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout - EcoGlow Candles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .checkout {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkout h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .checkout p {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #666;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #28a745;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .buy-btn {
+      background: #28a745;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background: #218838;
+    }
+
+    @media (max-width: 600px) {
+      .checkout {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoGlow Candles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="checkout">
+      <h2>Checkout</h2>
+      <p>Thank you for choosing EcoGlow Candles! Please fill out the form below to place your order.</p>
+
+      <form action="#" method="post">
+        <label for="product">Product Name:</label>
+        <input type="text" id="product" name="product" placeholder="e.g., Lavender Calm" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" placeholder="e.g., 2" required>
+
+        <label for="name">Your Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="e.g., Jane Doe" required>
+
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" placeholder="e.g., Plot 123, Gaborone, Botswana" required></textarea>
+
+        <label for="payment">Payment Method:</label>
+        <select id="payment" name="payment">
+          <option value="" disabled selected>Select a payment option</option>
+          <option value="mobilemoney">Mobile Money</option>
+          <option value="cash">Cash on Delivery</option>
+        </select>
+
+        <button type="submit" class="buy-btn">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EcoGlow Candles. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog - EcoGlow Candles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #5a7247;
+      --secondary: #d4a762;
+      --light: #f8f5f0;
+      --dark: #333333;
+      --accent: #a38f6a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--secondary);
+    }
+    
+    /* Main Content Styles */
+    main {
+      min-height: 70vh;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    section {
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    article {
+      background-color: var(--light);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    article h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    article p.date {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    article p.excerpt {
+      margin-bottom: 1.2rem;
+      color: var(--dark);
+      transition: max-height 0.3s ease;
+    }
+    
+    .full-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      color: var(--dark);
+    }
+    
+    .full-content.show {
+      max-height: 1000px; /* Adjust based on your content */
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--accent);
+    }
+    
+    .read-more {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+    
+    .read-more:hover {
+      background-color: var(--secondary);
+    }
+    
+    /* Footer Styles */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 1rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-section {
+      padding: 0 1rem;
+    }
+    
+    .footer-section h3 {
+      color: var(--secondary);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: var(--secondary);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    .newsletter-form {
+      display: flex;
+      margin-top: 1rem;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+    
+    .newsletter-form button {
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .newsletter-form button:hover {
+      background-color: #c09555;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--accent);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      nav {
+        gap: 1rem;
+      }
+      
+      main {
+        padding: 2rem 1rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+      
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoGlow Candles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>EcoGlow Blog</h2>
+      <p style="text-align: center; margin-bottom: 2.5rem;">Discover eco-friendly living tips, candle care guides, and behind-the-scenes stories from our sustainable workshop.</p>
+      
+      <div class="blog-grid">
+        <article>
+          <h3>🌸 Top 5 Spring Scents to Refresh Your Home</h3>
+          <p class="date">April 15, 2025 • 5 min read</p>
+          <p class="excerpt">As winter fades, embrace the season with our fresh spring fragrances...</p>
+          <div class="full-content" id="content1">
+            <p>Our cherry blossom candle combines delicate floral notes with a hint of green tea, creating a serene atmosphere perfect for spring meditation spaces. The lemon verbena option brings a burst of citrus energy to home offices, while our new lavender-peony blend offers a romantic touch for bedrooms.</p>
+            <p>Pro tip: Layer different spring scents throughout your home to create a natural fragrance journey that changes as you move between rooms.</p>
+          </div>
+          <button class="read-more" onclick="toggleContent('content1', this)">Read More</button>
+        </article>
+
+        <article>
+          <h3>🕯️ The Art of Hand-Poured Candles</h3>
+          <p class="date">March 22, 2025 • 7 min read</p>
+          <p class="excerpt">Step inside our workshop where each candle is carefully crafted by our artisans...</p>
+          <div class="full-content" id="content2">
+            <p>Our candle-making process begins with sustainably sourced soy wax that we carefully melt to precise temperatures. Each fragrance oil is measured to 8% concentration - the perfect ratio for strong scent throw without compromising air quality.</p>
+            <p>Watch our video tour to see how our artisans hand-pour each candle in small batches, ensuring consistent quality. We never use automation because we believe the human touch makes each candle special.</p>
+          </div>
+          <button class="read-more" onclick="toggleContent('content2', this)">Read More</button>
+        </article>
+
+        <article>
+          <h3>♻️ 10 Creative Ways to Upcycle Candle Jars</h3>
+          <p class="date">February 10, 2025 • 6 min read</p>
+          <p class="excerpt">Don't toss those beautiful jars! Transform them into herb gardens, makeup brush holders...</p>
+          <div class="full-content" id="content3">
+            <p><strong>1. Mini Terrarium:</strong> Layer pebbles, activated charcoal, soil, and succulents for a low-maintenance garden. <strong>2. Bathroom Organizer:</strong> Use our wide-mouth jars to store cotton balls and makeup brushes. <strong>3. Tea Light Holder:</strong> Place LED tea lights in cleaned jars for outdoor lighting.</p>
+            <p>We offer a jar return program too - bring back 5 clean jars and get 15% off your next purchase!</p>
+          </div>
+          <button class="read-more" onclick="toggleContent('content3', this)">Read More</button>
+        </article>
+
+        <article>
+          <h3>🌿 The Science Behind Soy Wax Benefits</h3>
+          <p class="date">January 28, 2025 • 8 min read</p>
+          <p class="excerpt">Discover why soy wax outperforms paraffin in every way...</p>
+          <div class="full-content" id="content4">
+            <p>Soy wax burns at a cooler temperature than paraffin, which means:</p>
+            <ul>
+              <li>30% longer burn time</li>
+              <li>No toxic toluene or benzene emissions</li>
+              <li>Cleaner walls and furniture (no black soot)</li>
+              <li>Biodegradable and water-soluble for easy cleanup</li>
+            </ul>
+            <p>Our soy is grown by American farmers using sustainable practices, supporting local agriculture.</p>
+          </div>
+          <button class="read-more" onclick="toggleContent('content4', this)">Read More</button>
+        </article>
+
+        <article>
+          <h3>✨ Creating the Perfect Ambiance with Candles</h3>
+          <p class="date">December 15, 2024 • 4 min read</p>
+          <p class="excerpt">Professional interior designers share their secrets for using candles to transform any room...</p>
+          <div class="full-content" id="content5">
+            <p><strong>Height Variation:</strong> Cluster candles at different heights using books or stands. <strong>Scent Pairing:</strong> Match candle fragrances to room function - citrus for kitchens, floral for bedrooms. <strong>Safety:</strong> Always keep 3 inches between burning candles and never leave unattended.</p>
+            <p>Our new Ambiance Guide includes room-by-room recommendations for candle placement and scent combinations.</p>
+          </div>
+          <button class="read-more" onclick="toggleContent('content5', this)">Read More</button>
+        </article>
+
+        <article>
+          <h3>🌎 Our Carbon-Neutral Journey</h3>
+          <p class="date">November 5, 2024 • 10 min read</p>
+          <p class="excerpt">How we achieved carbon neutrality across our entire supply chain...</p>
+          <div class="full-content" id="content6">
+            <p>We reduced our carbon footprint by:</p>
+            <ol>
+              <li>Switching to 100% renewable energy in our workshop</li>
+              <li>Partnering with carbon-neutral shipping providers</li>
+              <li>Offsetting remaining emissions through verified rainforest conservation</li>
+            </ol>
+            <p>In 2024, we became the first candle company in our region to achieve Platinum Zero Waste certification.</p>
+          </div>
+          <button class="read-more" onclick="toggleContent('content6', this)">Read More</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Blog Categories</h3>
+        <ul>
+          <li><a href="#">Candle Care Guides</a></li>
+          <li><a href="#">Eco-Living Tips</a></li>
+          <li><a href="#">Behind the Scenes</a></li>
+          <li><a href="#">Seasonal Inspiration</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Explore More</h3>
+        <ul>
+          <li><a href="products.html">Shop Candles</a></li>
+          <li><a href="sustainability.html">Our Sustainability</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="contact.html">Contact Our Team</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Join Our Community</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://pinterest.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://youtube.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>Get candle tips and exclusive offers</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 EcoGlow Candles. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleContent(contentId, button) {
+      const content = document.getElementById(contentId);
+      content.classList.toggle('show');
+      
+      if (content.classList.contains('show')) {
+        button.textContent = 'Read Less';
+      } else {
+        button.textContent = 'Read More';
+      }
+    }
+  </script>
+</body>
+</html>

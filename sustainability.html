@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sustainability - EcoGlow Candles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #5a7247;
+      --secondary: #d4a762;
+      --light: #f8f5f0;
+      --dark: #333333;
+      --accent: #a38f6a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--secondary);
+    }
+    
+    /* Main Content Styles */
+    main {
+      min-height: 70vh;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    section {
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    ul {
+      max-width: 600px;
+      margin: 2rem auto;
+      list-style: none;
+    }
+    
+    ul li {
+      background-color: var(--light);
+      margin-bottom: 1rem;
+      padding: 1.2rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.3s;
+    }
+    
+    ul li:hover {
+      transform: translateX(10px);
+    }
+    
+    ul li::before {
+      font-size: 1.5rem;
+    }
+    
+    /* Footer Styles */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 1rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-section {
+      padding: 0 1rem;
+    }
+    
+    .footer-section h3 {
+      color: var(--secondary);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      margin: 0;
+    }
+    
+    .footer-section ul li {
+      background: none;
+      padding: 0;
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: var(--secondary);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    .newsletter-form {
+      display: flex;
+      margin-top: 1rem;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+    
+    .newsletter-form button {
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .newsletter-form button:hover {
+      background-color: #c09555;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--accent);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      nav {
+        gap: 1rem;
+      }
+      
+      main {
+        padding: 2rem 1rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+      
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoGlow Candles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Our Sustainability Commitment</h2>
+      <p>At EcoGlow Candles, we're passionate about creating a sustainable future. Every product is designed with eco-consciousness in mind.</p>
+      
+      <ul>
+        <li>🌿 100% Natural Soy Wax - Cleaner burning with no petroleum byproducts</li>
+        <li>♻️ Recyclable Glass Jars - Designed for reuse with elegant minimalism</li>
+        <li>📦 Plastic-Free Packaging - 100% biodegradable and compostable materials</li>
+        <li>🚚 Carbon-Neutral Shipping - Partnering with eco-conscious carriers</li>
+        <li>🌳 Tree Planting Program - One tree planted for every 5 candles sold</li>
+        <li>🔄 Zero-Waste Initiative - 98% of production materials recycled</li>
+      </ul>
+      
+      <p>By choosing EcoGlow, you're supporting a cleaner, greener Earth—one candle at a time. Together, we're lighting the way to a more sustainable future.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sustainability.html">Our Sustainability</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://pinterest.com/ecoglowcandles" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+        <p>Subscribe to our eco-newsletter</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 EcoGlow Candles. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+</body>
+</html>

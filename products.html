@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products - EcoGlow Candles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Your existing styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f5f0;
+      color: #333333;
+    }
+    
+    header {
+      background-color: #5a7247;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .product {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .product img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    
+    .buy-btn {
+      display: inline-block;
+      background-color: #d4a762;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+
+    /* Added footer styles to match index page */
+    footer {
+      background-color: #5a7247;
+      color: white;
+      padding: 2rem 1rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-section {
+      padding: 0 1rem;
+    }
+    
+    .footer-section h3 {
+      color: #d4a762;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      border-bottom: 1px solid #a38f6a;
+      padding-bottom: 0.5rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      margin-top: 1rem;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+    
+    .newsletter-form button {
+      background-color: #d4a762;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #a38f6a;
+    }
+    
+    @media (max-width: 768px) {
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoGlow Candles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Our Candle Collection</h2>
+      <div class="product-container">
+
+        <!-- Product 1 -->
+        <div class="product">
+          <h3>Lavender Calm</h3>
+          <img src="https://i.postimg.cc/yN5JYQdJ/lavender-candle.jpg" alt="Lavender Calm" />
+          <p>Relaxing lavender-scented soy candle. 🌿</p>
+          <p><strong>Price: P75.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+          <h3>Citrus Zest</h3>
+          <img src="https://i.postimg.cc/sxC41DXZ/pexels-photo-7260249.webp" alt="Citrus Zest" />
+          <p>Bright citrus scent with orange and lemon oils. 🍊</p>
+          <p><strong>Price: P70.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+          <h3>Vanilla Spice</h3>
+          <img src="https://i.postimg.cc/SNytGDSY/istockphoto-457855539-612x612.webp" alt="Vanilla Spice" />
+          <p>Warm and cozy, perfect for evenings. 🎃</p>
+          <p><strong>Price: P80.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+          <h3>Mint Breeze</h3>
+          <img src="https://i.postimg.cc/PJXVwHb6/mint-breeze-candle.webp" alt="Mint Breeze" />
+          <p>Refreshing mint with eucalyptus. 🌬️</p>
+          <p><strong>Price: P70.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+          <h3>Rose Bloom</h3>
+          <img src="https://i.postimg.cc/kg618f8d/rose-bloom.webp" alt="Rose Bloom" />
+          <p>Delicate rose petals with vanilla. 🌹</p>
+          <p><strong>Price: P85.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product">
+          <h3>Ocean Mist</h3>
+          <img src="https://i.postimg.cc/4xD81VbH/vanilla-candle.webp" alt="Ocean Mist" />
+          <p>Sea breeze aroma with salt notes. 🌊</p>
+          <p><strong>Price: P75.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product">
+          <h3>Forest Pine</h3>
+          <img src="https://i.postimg.cc/7YCMQbL3/forest-pine.jpg" alt="Forest Pine" />
+          <p>Earthy pine scent. 🌲</p>
+          <p><strong>Price: P70.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product">
+          <h3>Coconut Dream</h3>
+          <img src="https://i.postimg.cc/DZy1QwDb/coconut-dream.jpg" alt="Coconut Dream" />
+          <p>Exotic coconut with vanilla. 🥥</p>
+          <p><strong>Price: P80.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="product">
+          <h3>Berry Bliss</h3>
+          <img src="https://i.postimg.cc/3rznh2VS/berry-bliss.jpg" alt="Berry Bliss" />
+          <p>Juicy berries and sugar twist. 🍓</p>
+          <p><strong>Price: P70.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="product">
+          <h3>Amber Glow</h3>
+          <img src="https://i.postimg.cc/0y0f7FQF/amber-glow.webp" alt="Amber Glow" />
+          <p>Rich amber with spice. 🕯️</p>
+          <p><strong>Price: P90.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 11 -->
+        <div class="product">
+          <h3>Himalayan Tea</h3>
+          <img src="https://i.postimg.cc/kMRvTBGx/himalayan-candle.webp" alt="Himalayan Tea" />
+          <p>Earthy tea leaves. 🍵</p>
+          <p><strong>Price: P75.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="product">
+          <h3>Chai Spice</h3>
+          <img src="https://i.postimg.cc/wBbDVpdf/chai-spice-candle.jpg" alt="Chai Spice" />
+          <p>Cinnamon, clove & cardamom. ☕</p>
+          <p><strong>Price: P80.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 13 -->
+        <div class="product">
+          <h3>Peach Sunset</h3>
+          <img src="https://i.postimg.cc/T2nWymhH/peach-sunset-candle.jpg" alt="Peach Sunset" />
+          <p>Sweet peach aroma. 🍑</p>
+          <p><strong>Price: P75.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 14 -->
+        <div class="product">
+          <h3>Jasmine Serenity</h3>
+          <img src="https://i.postimg.cc/NfY2RMHG/jasmine-candle.jpg" alt="Jasmine Serenity" />
+          <p>Smooth jasmine notes. 🌼</p>
+          <p><strong>Price: P85.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- Product 15 -->
+        <div class="product">
+          <h3>Midnight Musk</h3>
+          <img src="https://i.postimg.cc/4y1dW69f/midnight-musk.webp" alt="Midnight Musk" />
+          <p>Musk and sandalwood. 🌒</p>
+          <p><strong>Price: P90.00</strong></p>
+          <a href="checkout.html" class="buy-btn">Buy Now</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+        <p>Subscribe to our newsletter</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 EcoGlow Candles. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+</body>
+</html>
